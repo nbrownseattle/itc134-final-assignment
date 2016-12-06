@@ -13,30 +13,30 @@ class Conversion:
 
 def menu():
     print ("Temperature Converter")
-    print ("Select your option\n")
     print ("1. Celcius to Fahrenheit")
     print ("2. Fahrenheit to Celcius")
     print ("3. Quit\n")
-    user_input = '0'
-
+  
 def main():
-    menu()
-    user_input = int(input("Choose your option: "))
-
-    while user_input != 3:
+    while True:
+        menu()
+        inputStr = input("Select your option: ")
+        user_input = int(inputStr)
         if user_input == 1:
-            temp = eval(input("Enter your temperature:"))
+            temp = float(input("Enter the temperature: "))
             ans = Conversion(temp)
-            print (ans.CtoF())
+            print (temp, "degree Celcius is {0:.1f} degree Fahrenheit.\n".format(ans.CtoF()))
+              
         elif user_input == 2:
-            temp = eval(input("Enter your temperature:"))
+            temp = float(input("Enter the temperature: "))
             ans = Conversion(temp)
-            print (ans.FtoC())
+            print (temp, "degree Fahrenheit is {0:.1f} degree Celcius.\n".format(ans.FtoC()))
+
         elif user_input == 3:
-            exit()
+            break
+            
         else:
-            print ("Your option is not valid. Please try again.")
-            menu()
+            print ("Your option is not valid. Please try again.\n")
 
 if __name__ == "__main__":
     main()
