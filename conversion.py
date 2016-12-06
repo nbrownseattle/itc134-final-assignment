@@ -20,8 +20,7 @@ def menu():
 def main():
     while True:
         menu()
-        inputStr = input("Select your option: ")
-        user_input = int(inputStr)
+        user_input = int(input("Select your option: "))
         if user_input == 1:
             temp = float(input("Enter the temperature: "))
             ans = Conversion(temp)
